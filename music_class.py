@@ -13,9 +13,12 @@ class Music:
         self.__filename = ''
         self.__lyric = ''
         #insert all the songs to the list
-        self.__playlist.append('Legends never die-Against the current.mp3')
-        self.__playlist.append('盛世回首-慕寒&Mario.mp3')
-        self.__playlist.append('山鬼-Winky诗.mp3')
+        self.__playlist.append('年深几许.mp3')
+        self.__playlist.append('不必回望.mp3')
+        self.__playlist.append('你爱着的.mp3')
+        self.__playlist.append('林下漏月光.mp3')
+        self.__playlist.append('说情长.mp3')
+        self.__playlist.append('船客与执灯人.mp3')
 
     def allsongs_name(self):
         global i
