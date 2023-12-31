@@ -31,7 +31,7 @@ class Music:
     def get_playlist(self):
         #the playlist will be showed on the shell
         #this is the fastest funtion in this program
-        print(self.__playlist)
+        print(set(self.__playlist))
 
     def play_music(self):
         #test if there is a song displaying
