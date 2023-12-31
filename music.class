@@ -124,7 +124,6 @@ class Music:
             f.write(self.__lyric)
             f.close()
 
-
     def get_lyric(self):
         #get the text
         return self.__lyric
