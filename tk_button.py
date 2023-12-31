@@ -6,7 +6,7 @@ import tkinter.filedialog
 #But that performance is so low that it can take hours to load
 
 #import the class from another file
-from final_project2 import Music
+from music_class import Music
 
 class FileGUI:
 
