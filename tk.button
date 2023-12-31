@@ -4,8 +4,6 @@ import tkinter.filedialog
 
 #I had planned to replay each song after it was played
 #But that performance is so low that it can take hours to load
-#I have no idea with that
-#so this is the final program
 
 #import the class from another file
 from final_project2 import Music
@@ -17,6 +15,7 @@ class FileGUI:
         self.main_window=tk.Tk()
         self.file=Music()
         self.left_frame=tk.Frame(self.main_window)
+        self.right_frame=tk.Frame(self.main_window)
         #create 10 new buttons to promote
         self.playbutton = tk.Button(self.left_frame,text='-Play-',
                                         command=self.file.play_music,
@@ -42,34 +41,35 @@ class FileGUI:
         self.nextbutton.pack()
         self.lyricbutton = tk.Button(self.left_frame,text='-Lyric-',
                                          command=self.read_lyric,
-                                         width=10,height=2)
+                                         width=8,height=2)
         self.lyricbutton.pack()
         #press the playlist button to see the play list
         self.listbutton = tk.Button(self.left_frame,text='-PlayList-',
                                          command=self.file.get_playlist,
-                                         width=10,height=2)
+                                         width=8,height=2)
         self.listbutton.pack()
         #three mode to display songs
-        self.mode1button = tk.Button(self.left_frame,text='-List To Loop-',
+        self.mode1button = tk.Button(self.right_frame, text='-List Loop-',
                                          command=self.file.listtoloop_music,
-                                         width=14,height=2)
+                                         width=8,height=2)
         self.mode1button.pack()
-        self.mode2button = tk.Button(self.left_frame,text='-Single To Loop-',
+        self.mode2button = tk.Button(self.right_frame, text='-Single Loop-',
                                          command=self.file.singletoloop_music,
-                                         width=14,height=2)
+                                         width=8,height=2)
         self.mode2button.pack()
-        self.mode3button = tk.Button(self.left_frame,text='-Play At Random-',
+        self.mode3button = tk.Button(self.right_frame, text='-Random-',
                                          command=self.file.playatrandom_music,
-                                         width=14,height=2)
+                                         width=8,height=2)
         self.mode3button.pack()
         #create the text frame to open the lyric file
-        self.right_frame=tk.Frame(self.main_window) 
-        self.scrollbar = tk.Scrollbar(self.right_frame)
+        self.center_frame=tk.Frame(self.main_window) 
+        self.scrollbar = tk.Scrollbar(self.center_frame)
         self.scrollbar.pack(side=tk.RIGHT,fill=tk.Y)
-        self.text=tk.Text(self.right_frame, yscrollcommand = self.scrollbar.set)
+        self.text=tk.Text(self.center_frame, yscrollcommand = self.scrollbar.set)
         self.text.pack(side=tk.LEFT)
         self.scrollbar.config(command=self.text.yview)
         self.left_frame.pack(side=tk.LEFT)
+        self.center_frame.pack(side=tk.LEFT)
         self.right_frame.pack(side=tk.LEFT)
         tk.mainloop()
 
